@@ -1,0 +1,9 @@
+<p>The dealer has: <%= session[:dealer].reveal_cards %></p>
+<p>You have: <%= session[:player].reveal_cards %></p>
+<% if session[:dealer].bust? || session[:turn] == "game over" %>
+  <a href="/game/game_over"><button>See Result</button></a>
+<% else %>
+  <form method="post" action="/game/dealer_turn">
+    <button type="submit">Dealer Move</button>
+  </form>
+<% end %>

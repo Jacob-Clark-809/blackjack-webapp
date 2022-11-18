@@ -1,0 +1,10 @@
+<p>The dealer has: <%= session[:dealer].reveal_one_card %></p>
+<p>You have: <%= session[:player].reveal_cards %></p>
+<div>
+<form method="post" action="/game/player_turn/twist" class="inline">
+  <button type="submit">Twist</button>
+</form>
+<form method="post" action="/game/dealer_turn" class="inline">
+  <button type="submit">Stick</button>
+</form>
+</div>
